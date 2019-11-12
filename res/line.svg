@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0.57 75.89" width="0.57" height="75.89">
+  <defs>
+    <style>
+      .\32 6b56ddc-67f5-4b98-8d59-afca4c7c5b07 {
+        fill: none;
+        stroke: #c10513;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 0.57px;
+        stroke-dasharray: 3 3;
+      }
+    </style>
+  </defs>
+  <title>line</title>
+  <g id="2e19d923-2760-4189-a61e-27cbf8d16dae" data-name="Layer 2">
+    <g id="5eadc6e1-e621-45b2-929d-94231152ed74" data-name="Layer 1">
+      <line class="26b56ddc-67f5-4b98-8d59-afca4c7c5b07" x1="0.28" y1="75.6" x2="0.28" y2="0.28"/>
+    </g>
+  </g>
+</svg>

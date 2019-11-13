@@ -47,7 +47,7 @@ Right now this version won't support remote location.
 
 **Ready to try Pre build carrom board portal files**
 
-- available in build folder and can be accessible by taking the url
+- available in build folder and can be accessible by taking the url ```https://rajeeshqb.github.io/striking/build/play-carrom.html```
 
 **Communication**
 

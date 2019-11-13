@@ -2,6 +2,10 @@
 Striking is a simulation of a carrom board play where 2 players can play carrom board (board version) using a browser. Both players can share same browser interface.
 Right now this version won't support remote location.
 
+**Ready to try Pre build carrom board portal files**
+
+- available in build folder and can be accessible by taking the url ```https://rajeeshqb.github.io/striking/build/play-carrom.html```
+
 **Requirements**
 
 - NodeJS   >= 6.4.x
@@ -44,10 +48,6 @@ Right now this version won't support remote location.
 
 - Copy html files (publish/html5/) to any webserver document root and call that webserver access url.
 
-
-**Ready to try Pre build carrom board portal files**
-
-- available in build folder and can be accessible by taking the url ```https://rajeeshqb.github.io/striking/build/play-carrom.html```
 
 **Communication**
 

@@ -1,0 +1,48 @@
+{
+  "name": "carrom-board-game",
+  "version": "0.0.1",
+  "description": "Online multiplayer Carrom board game",
+  "main": "setup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "node tools/setup.js",
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --config tools/webpack.config.js  --port 8081 --progress --colors --hot",
+    "prod:bundlesrc": "NODE_ENV=production webpack -p --config tools/webpack.production.config.js",
+    "prod:cocos": "cocos deploy -p web -m release",
+    "copyfile": "webpack -p --config tools/webpack.production.copyfile.js",
+    "production": "npm run clean && npm run prod:bundlesrc && npm run prod:cocos && rm -f bundle.js && npm run copy",
+    "clean": "rm -rf publish && rm -f bundle.js",
+    "copy": "cp play-carrom-prod.html publish/html5/play-carrom.html && cp -r css publish/html5/css/ && cp -r js publish/html5/js/ && cp -r video publish/html5/video/"
+  },
+  "keywords": [
+    "cocos2d",
+    "es6",
+    "es2015",
+    "babel",
+    "webpack",
+    "eslint",
+    "boilerplate",
+    "quickstart"
+  ],
+  "author": "Amith Ramachandran, Dhinsha Mahesh, Dilna Ganesh",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "@babel/core": "7.6.4",
+    "babel-loader": "8.0.6",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-polyfill": "6.26.0",
+    "@babel/preset-env": "7.7.1",
+    "copy-webpack-plugin": "5.0.4",
+    "eslint": "3.0.1",
+    "eslint-loader": "3.0.2",
+    "inquirer": "^1.1.2",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.9.0"
+  },
+  "dependencies": {
+    "lodash": "4.15.0"
+  }
+}

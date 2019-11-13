@@ -49,3 +49,13 @@ Right now this version won't support remote location.
 
 - available in build folder and can be accessible by taking the url
 
+**Communication**
+
+- If you **find a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
+
+**Author**
+
+
+**License**

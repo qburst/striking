@@ -48,6 +48,9 @@ Right now this version won't support remote location.
 
 - Copy html files (publish/html5/) to any webserver document root and call that webserver access url.
 
+**For Collaborators**
+
+- Run command ```npm run prepare-build``` in the root folder of your project for updating pre build files (Should execute after running production build command).
 
 **Communication**
 

@@ -1,6 +1,6 @@
 {
-  "name": "carrom-board-game",
-  "version": "0.0.1",
+  "name": "striking",
+  "version": "1.0.0",
   "description": "Online multiplayer Carrom board game",
   "main": "setup.js",
   "scripts": {
@@ -13,7 +13,8 @@
     "copyfile": "webpack -p --config tools/webpack.production.copyfile.js",
     "production": "npm run clean && npm run prod:bundlesrc && npm run prod:cocos && rm -f bundle.js && npm run copy",
     "clean": "rm -rf publish && rm -f bundle.js",
-    "copy": "cp play-carrom-prod.html publish/html5/play-carrom.html && cp -r css publish/html5/css/ && cp -r js publish/html5/js/ && cp -r video publish/html5/video/"
+    "copy": "cp play-carrom-prod.html publish/html5/play-carrom.html && cp -r css publish/html5/css/ && cp -r js publish/html5/js/ && cp -r video publish/html5/video/",
+    "prepare-build": "cp -r publish/html5/* build/"
   },
   "keywords": [
     "cocos2d",
@@ -25,8 +26,8 @@
     "boilerplate",
     "quickstart"
   ],
-  "author": "Amith Ramachandran, Dhinsha Mahesh, Dilna Ganesh",
-  "license": "MIT",
+  "author": "Amith Ramachandran, Dhinsha Mahesh, Dilna Ganesh, Ajnash P",
+  "license": "GNU GPL V3",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "@babel/core": "7.6.4",

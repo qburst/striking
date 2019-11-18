@@ -55,7 +55,8 @@ Right now this version won't support remote location.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 
-**Author**
-
-
 **License**
+
+- Striking is specifically available only under version 3 of the GNU General Public License (GPLv3). (I.e. Without the "any later version" clause.)
+- License information can be found in the LICENSE file.
+

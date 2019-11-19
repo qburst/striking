@@ -26,7 +26,7 @@
     "boilerplate",
     "quickstart"
   ],
-  "author": "Amith Ramachandran, Dhinsha Mahesh, Dilna Ganesh, Ajnash P",
+  "author": "QBurst Technologies",
   "license": "GNU GPL V3",
   "devDependencies": {
     "babel-cli": "6.26.0",

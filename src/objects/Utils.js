@@ -55,5 +55,22 @@ export default class Utils {
     this.newButton.y = position.y;
     return this.newButton;
   }
+  createLine(position,width,color){
+    this.LineP1 = new cc.DrawNode();
+    this.LineP1.drawSegment(cc.p(position.x1,position.y1), cc.p(position.x2,position.y2),width,cc.Color(color));
+    return this.LineP1;
+
+  }
+  createColor(color,x,y, width, height){
+    this.colorLayer = new cc.LayerColor(color,x, y);
+    this.colorLayer.ignoreAnchorPointForPosition(false);
+    this.colorLayer.width = width;
+    this.colorLayer.height = height;
+    this.colorLayer.x = x;
+    this.colorLayer.y = y;
+    return this.colorLayer;
+  }
+ 
+  
 
 }

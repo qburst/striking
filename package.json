@@ -29,13 +29,13 @@
   "author": "QBurst Technologies",
   "license": "GNU GPL V3",
   "devDependencies": {
-    "babel-cli": "6.26.0",
     "@babel/core": "7.6.4",
+    "@babel/preset-env": "7.7.1",
+    "babel-cli": "6.26.0",
     "babel-loader": "8.0.6",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-polyfill": "6.26.0",
-    "@babel/preset-env": "7.7.1",
-    "copy-webpack-plugin": "5.0.4",
+    "copy-webpack-plugin": "5.1.1",
     "eslint": "3.0.1",
     "eslint-loader": "3.0.2",
     "inquirer": "^1.1.2",
@@ -44,6 +44,6 @@
     "webpack-dev-server": "3.9.0"
   },
   "dependencies": {
-    "lodash": "4.15.0"
+    "lodash": "4.17.15"
   }
 }

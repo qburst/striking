@@ -1,5 +1,4 @@
 /****************************************************************************************
-
     Striking is a simulation of a carrom board play where 2 players can 
     play carrom board (board version) using a browser. 
 
@@ -17,7 +16,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.txt />. 
 
-****************************************************************************************/
+ ****************************************************************************************/
 
 const Resources = {
   carromLogo: 'res/logo.jpg',
@@ -27,7 +26,7 @@ const Resources = {
   red: 'res/redcoin.png',
   stricker: 'res/stricker.png',
   hole: 'res/round.png',
-  blueBG: 'res/bg.png',
+  blueBG: 'res/whitecoin.png' ,
   collectedCoinsBG: 'res/pointsbg.png',
   iAmRockFont: 'res/fonts/i_am_a_rock/IAmaRock_Free_For_Personal_Use_Only.ttf',
   makidoFont: 'res/fonts/MikadoBold_DEMO.otf',

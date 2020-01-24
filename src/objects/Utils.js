@@ -56,9 +56,9 @@ export default class Utils {
     return this.newButton;
   }
   createLine(position,width,color){
-    this.LineP1 = new cc.DrawNode();
-    this.LineP1.drawSegment(cc.p(position.x1,position.y1), cc.p(position.x2,position.y2),width,cc.Color(color));
-    return this.LineP1;
+    this.Line = new cc.DrawNode();
+    this.Line.drawSegment(cc.p(position.x1,position.y1), cc.p(position.x2,position.y2),width, color);
+    return this.Line;
 
   }
   createColor(color,x,y, width, height){
@@ -70,7 +70,6 @@ export default class Utils {
     this.colorLayer.y = y;
     return this.colorLayer;
   }
- 
   
 
 }

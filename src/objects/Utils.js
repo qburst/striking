@@ -62,7 +62,7 @@ export default class Utils {
 
   }
   createColor(color,x,y, width, height){
-    this.colorLayer = new cc.LayerColor(color,x, y);
+    this.colorLayer = new cc.LayerGradient(CC.color(5, 101, 3), CC.color(0, 44, 0), CC.p(1,1));
     this.colorLayer.ignoreAnchorPointForPosition(false);
     this.colorLayer.width = width;
     this.colorLayer.height = height;
@@ -70,6 +70,8 @@ export default class Utils {
     this.colorLayer.y = y;
     return this.colorLayer;
   }
+   
+ 
   
 
 }

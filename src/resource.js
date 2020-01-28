@@ -30,6 +30,8 @@ const Resources = {
   collectedCoinsBG: 'res/pointsbg.png',
   iAmRockFont: 'res/fonts/i_am_a_rock/IAmaRock_Free_For_Personal_Use_Only.ttf',
   makidoFont: 'res/fonts/MikadoBold_DEMO.otf',
+  oswald : 'res/fonts/Oswald-Regular.ttf' ,
+  oswaldbold : 'res/fonts/Oswald-Bold.ttf',
   winsBG: 'res/wins.png',
   bot2Pot: 'res/bot_2_pot.png',
   bar: 'res/color-bar-red.jpg',

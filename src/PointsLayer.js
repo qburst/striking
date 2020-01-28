@@ -42,42 +42,46 @@ const PointsLayer = CC.Layer.extend({
 
   ctor: function () {
     this._super();
+    this.ColorL1 = this.utils.createColor(cc.color(0,54,1), 90, 350, 420, 700);
+    this.addChild(this.ColorL1,1);
+
+    this.ColorL2 = this.utils.createColor(cc.color(0,54,1), 1180, 350, 355, 700);
+    this.addChild(this.ColorL2,1);
 
     var firstRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1, (CC.color(243, 250, 235)), 15,RectType.Top,{x:180, y:5000});
     firstRoundRect.setPosition(CP.v(30,330));
-    this.addChild(firstRoundRect,5);
+    this.addChild(firstRoundRect,4);
 
     
-    var firstCircle = new RoundRect(50, 50, (CC.color(46, 86, 46)), 1, (CC.color(46, 86, 46)), 23,RectType.Top,{x:180, y:5000});
+    var firstCircle = new RoundRect(50, 50, (CC.color(48, 87, 46)), 1, (CC.color(48, 87, 46)), 23,RectType.Top,{x:180, y:5000});
     firstCircle .setPosition(CP.v(214,575));
     this.addChild(firstCircle ,5); 
 
-   
 
-    var SmallRect1 = new RoundRect(170, 40, (CC.color(255, 247, 214)), 1, (CC.color(165, 105, 80)), 10,RectType.Top,{x:180, y:5000});
-    SmallRect1.setPosition(CP.v(60,475));
+    var SmallRect1 = new RoundRect(170, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(165, 105, 80)), 7,RectType.Top,{x:180, y:5000});
+    SmallRect1.setPosition(CP.v(70,475));
     this.addChild(SmallRect1,5);
 
-    this.Line1 = this.utils.createLine({x1:250,y1:380,x2:50,y2:380}, 0.5, CC.color(157, 96, 73));
+    this.Line1 = this.utils.createLine({x1:40,y1:380,x2:270,y2:380}, 0.5, CC.color(157, 96, 73));
     this.addChild(this.Line1, 5);
 
     var secondRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1, (CC.color(243, 250, 235)), 15,RectType.Top,{x:180, y:5000});
     secondRoundRect.setPosition(CP.v(1030,330));
-    this.addChild(secondRoundRect,5);
+    this.addChild(secondRoundRect,4);
 
     var secondCircle = new RoundRect(50,50, (CC.color(46, 86, 46)), 0.5, (CC.color(46, 86, 46)), 24,RectType.Top,{x:180, y:5000});
     secondCircle .setPosition(CP.v(1035,575));
     this.addChild(secondCircle ,5); 
  
-    var SmallRect2 = new RoundRect(170, 40, (CC.color(255, 247, 214)), 1, (CC.color(165, 105, 80)), 10,RectType.Top,{x:180, y:5000});
+    var SmallRect2 = new RoundRect(170, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(165, 105, 80)), 7,RectType.Top,{x:180, y:5000});
     SmallRect2.setPosition(CP.v(1070,475));
     this.addChild(SmallRect2,5);
 
-    this.Line1 = this.utils.createLine({x1:1050,y1:380,x2:1250,y2:380}, 0.5, CC.color(157, 96, 73));
-    this.addChild(this.Line1, 5);
+    this.Line2 = this.utils.createLine({x1:1040,y1:380,x2:1270,y2:380}, 0.5, CC.color(157, 96, 73));
+    this.addChild(this.Line2, 5);
 
     this.collectedTextP1 = this.utils.createtextLabels('Coins Earned', 'iAmRockFont', 20,
-     {x: 140, y: 490});
+     {x: 155, y: 490});
     this.collectedTextP1.setColor(CC.color(185,141,126));
     this.addChild(this.collectedTextP1, 5);
 
@@ -91,16 +95,14 @@ const PointsLayer = CC.Layer.extend({
      this.totalCoinsTextP1.setColor(CC.color(149,101,78));
     this.addChild(this.totalCoinsTextP1, 5);
 
-    this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1,cc.Color(243,250,235));
+    this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5);
+    this.LineP1.setColor(CC.color(243,250,0));
     this.addChild(this.LineP1, 5);
-    this.LineP2 = this.utils.createLine({x1:1030,y1:550,x2:1270,y2:550},1,cc.Color(243,250,235));
+  
+    this.LineP2 = this.utils.createLine({x1:1030,y1:550,x2:1270,y2:550},1.5,CC.color(243,250,235));
     this.addChild(this.LineP2, 5);
 
-    this.ColorL1 = this.utils.createColor(cc.color(0,54,1), 90, 350, 420, 700);
-    this.addChild(this.ColorL1,4);
-
-    this.ColorL2 = this.utils.createColor(cc.color(0,54,1), 1180, 350, 355, 700);
-    this.addChild(this.ColorL2,4);
+    
    
     this.totalCoinsTextP2 = this.utils.createtextLabels('Total Coins :', 'iAmRockFont', 18,
      {x: 1100, y: 350});

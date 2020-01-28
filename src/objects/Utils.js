@@ -71,7 +71,5 @@ export default class Utils {
     return this.colorLayer;
   }
    
- 
-  
 
 }

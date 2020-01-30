@@ -57,9 +57,8 @@ export default class Utils {
   }
   createLine(position,width,color){
     this.Line = new cc.DrawNode();
-    this.Line.drawSegment(cc.p(position.x1,position.y1), cc.p(position.x2,position.y2),width, color);
+    this.Line.drawSegment(cc.p(position.x1,position.y1), cc.p(position.x2,position.y2),width,color);
     return this.Line;
-
   }
   createColor(color,x,y, width, height){
     this.colorLayer = new cc.LayerGradient(CC.color(5, 101, 3), CC.color(0, 44, 0), CC.p(1,1));

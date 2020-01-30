@@ -1,26 +1,7 @@
-/****************************************************************************************
-
-    Striking is a simulation of a carrom board play where 2 players can 
-    play carrom board (board version) using a browser. 
-
-    Copyright © 2019  QBurst Technologies 
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, version 3 of the License.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.txt />. 
-
-****************************************************************************************/
-
-import {CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,
-        COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER} from './globals';
+import {
+  CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,
+  COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER
+} from './globals';
 import Config from './config';
 import Resources from './resource';
 import Carrom from './objects/Carrom';
@@ -132,8 +113,8 @@ const CarromBoardLayer = CC.Layer.extend({
     this.activePlayer = (this.player1info.id === gameDetails.lastStrike) ?
       this.player2info : this.player1info;
 
-    this.addcoinsleftBG = this.utils.addCollectedCoinsBG({x: 145, y: 430});
-    this.addcoinsrightBG = this.utils.addCollectedCoinsBG({x: 1153, y: 430});
+    this.addcoinsleftBG = this.utils.addCollectedCoinsBG({ x: 145, y: 430 });
+    this.addcoinsrightBG = this.utils.addCollectedCoinsBG({ x: 1153, y: 430 });
     this.addChild(this.addcoinsleftBG, 0.2);
     this.addChild(this.addcoinsrightBG, 0.2);
 
@@ -145,13 +126,13 @@ const CarromBoardLayer = CC.Layer.extend({
   addmouseEvents: function () {
     CC.eventManager.addListener({
       event: CC.EventListener.MOUSE,
-      onMouseMove: (event)=> {
+      onMouseMove: (event) => {
         this.mouseOnMove(event);
       },
-      onMouseUp: (event)=> {
+      onMouseUp: (event) => {
         this.mouseUp(event);
       },
-      onMouseDown: (event)=> {
+      onMouseDown: (event) => {
         this.mouseDown(event);
       }
     }, this);
@@ -206,7 +187,7 @@ const CarromBoardLayer = CC.Layer.extend({
     if (this.dottedLineLayer) {
       this.removeChild(this.dottedLineLayer)
     }
-     
+
     let yPosition = this.utils.clamp(event.getLocationY(), Config.MIN_Y, Config.MAX_Y);
 
     if ((event.getLocationX() > this.activePlayer.strickerMinxRange) &&
@@ -304,7 +285,7 @@ const CarromBoardLayer = CC.Layer.extend({
     let y = !this.leftSideSelected ? (this.stricker.body.p.y +
       ((100 * slope) / Math.sqrt(1 + Math.pow(slope, 2)))) : (this.stricker.body.p.y -
         ((100 * slope) / Math.sqrt(1 + Math.pow(slope, 2))));
-    return {x: x, y: y};
+    return { x: x, y: y };
   },
 
   addDottedLine: function () {
@@ -369,11 +350,11 @@ const CarromBoardLayer = CC.Layer.extend({
       this.player2info.id, this.player1info.id);
 
     // to add coins earned in point layer
-    if (this.player1info.whiteCoinCount !== 0) {
+    if (this.player1info.whiteCoinCount !== 3) {
       let whiteCoin = this.player1info.whiteCoinCount;
-      while (whiteCoin > 0) {
-        let coinPosition = 13 + 27 * whiteCoin;
 
+      while (whiteCoin > 3) {
+        let coinPosition = 13 + 37 * whiteCoin;
         let whiteCoin1 = this.pointsLayer.setEarnedCoins('white',
           { x: coinPosition, y: 450 }, whiteCoin);
         this.addChild(whiteCoin1, 5);
@@ -382,14 +363,14 @@ const CarromBoardLayer = CC.Layer.extend({
     }
 
     if (this.player1info.redCoinCount !== 0) {
-      let redCoin1 = this.pointsLayer.setEarnedCoins('red', {x: 40, y: 350}, 100);
+      let redCoin1 = this.pointsLayer.setEarnedCoins('red', { x: 250, y: 440 }, 100);
       this.addChild(redCoin1, 5);
     }
 
-    if (this.player2info.blackCoinCount !== 0) {
+    if (this.player2info.blackCoinCount !== 3) {
       let blackCoin1 = this.player2info.blackCoinCount;
-      while (blackCoin1 > 0) {
-        let coinPosition = 1020 + 27 * blackCoin1;
+      while (blackCoin1 > 3) {
+        let coinPosition = 1020 + 38 * blackCoin1;
         let blackCoin2 = this.pointsLayer.setEarnedCoins('black',
           { x: coinPosition, y: 400 }, blackCoin1 + 10);
         this.addChild(blackCoin2, 5);
@@ -398,14 +379,14 @@ const CarromBoardLayer = CC.Layer.extend({
     }
 
     if (this.player2info.redCoinCount !== 0) {
-      let redCoin2 = this.pointsLayer.setEarnedCoins('red', {x: 1050, y: 350}, 100);
+      let redCoin2 = this.pointsLayer.setEarnedCoins('red', { x: 1450, y: 430 }, 100);
       this.addChild(redCoin2, 5);
     }
   },
 
   /**
-   * Initialize physics space, enable debugmode.
-   * @returns {void}
+  * Initialize physics space, enable debugmode.
+  * @returns {void}
   */
   initPhysics: function () {
     this.space = new CP.Space();
@@ -417,8 +398,8 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-   * Enable debugmode.
-   * @returns {void}
+  * Enable debugmode.
+  * @returns {void}
   */
   initDebugMode: function () {
     let phDebugNode = CC.PhysicsDebugNode.create(this.space);
@@ -426,39 +407,39 @@ const CarromBoardLayer = CC.Layer.extend({
     this.addChild(phDebugNode, 25);
   },
   /**
-   * Add carrom board to the scene.
-   * @returns {void}
+  * Add carrom board to the scene.
+  * @returns {void}
   */
   addBoardSprite: function () {
     let carromBoardSprite = new CC.Sprite(Resources.carromBG);
-    carromBoardSprite.setPosition(CP.v(this.size.width /2, this.size.height /2));
+    carromBoardSprite.setPosition(CP.v(this.size.width / 2, this.size.height / 2));
     this.addChild(carromBoardSprite, 0.2);
   },
 
   addBG: function () {
     let colorLayer = new CC.Sprite(Resources.blueBG);
-    colorLayer.setPosition(CP.v(this.size.width /2, this.size.height /2));
+    colorLayer.setPosition(CP.v(this.size.width / 2, this.size.height / 2));
     this.addChild(colorLayer, 0.2);
   },
 
 
   changeGameState: function (state) {
     switch (state) {
-    case 'initialize': this.initilizeCoinsandWalls();
-      break;
-    case 'start': this.startGame();
-      break;
-    case 'wait': this.waitLogic();
-      break;
-    case 'end': this.gameEndLogic();
-      break;
-    default: break;
+      case 'initialize': this.initilizeCoinsandWalls();
+        break;
+      case 'start': this.startGame();
+        break;
+      case 'wait': this.waitLogic();
+        break;
+      case 'end': this.gameEndLogic();
+        break;
+      default: break;
     }
   },
 
   /**
-   * game state initialize logic.Add board, coins, walls.
-   * @returns {void}
+  * game state initialize logic.Add board, coins, walls.
+  * @returns {void}
   */
   initilizeCoinsandWalls: function () {
     this.addBoardSprite();
@@ -505,7 +486,7 @@ const CarromBoardLayer = CC.Layer.extend({
     );
   },
 
-   // to rotate initial coin position in a random angle while restart
+  // to rotate initial coin position in a random angle while restart
 
   getRandomCoinPosition: function (coinsArray) {
     let angle = Math.random() * (6.28 - 0.1) + 0.1;
@@ -521,12 +502,12 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-   * The Game loop. Business rules implemented here.
-   * @returns {void}
+  * The Game loop. Business rules implemented here.
+  * @returns {void}
   */
   updateLoop: function () {
     if (!this.isGameEnd) {
-      this.space.step(1/60);
+      this.space.step(1 / 60);
       if (this.stricker) {
         this.stricker.update();
       }
@@ -566,7 +547,7 @@ const CarromBoardLayer = CC.Layer.extend({
     let winnerData = this.checkGameEnd();
     if (winnerData && winnerData.isGameEnd) {
       let carromBoardSprite = new CC.Sprite(Resources.winsBG);
-      carromBoardSprite.setPosition(CP.v(this.size.width /2, this.size.height /2));
+      carromBoardSprite.setPosition(CP.v(this.size.width / 2, this.size.height / 2));
       this.addChild(carromBoardSprite, 40);
 
       let playerName = this.utils.createtextLabels(winnerData.name +
@@ -579,7 +560,7 @@ const CarromBoardLayer = CC.Layer.extend({
       carromBoardSprite.runAction(animation);
       this.isGameEnd = true;
     } else {
-        // for strike count
+      // for strike count
       let player = this.getPlayer();
       if (!player.playerData.redCoinInHole) {
         this.changePlayer();
@@ -655,20 +636,20 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-   * cocos update loop
-   * @param {number} dt The value.
-   * @returns {void}
+  * cocos update loop
+  * @param {number} dt The value.
+  * @returns {void}
   */
   update: function (dt) {
-    console.log(dt)
+    // console.log(dt)
   },
 
   /**
-   * create carrom board boundary.
-   * @param {number} width The width.
-   * @param {number} height The height.
-   * @param {number} position The position.
-   * @returns {void}
+  * create carrom board boundary.
+  * @param {number} width The width.
+  * @param {number} height The height.
+  * @param {number} position The position.
+  * @returns {void}
   */
   addBoundary: function (width, height, position) {
     this.boundary = new Boundary(this.space, {
@@ -693,13 +674,13 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-   * create coins and striker and add to scene.
-   * @param {string} type The type.
-   * @param {number} x The x position.
-   * @param {number} y The y position.
-   * @param {string} id The id.
-   * @returns {void}
-   */
+  * create coins and striker and add to scene.
+  * @param {string} type The type.
+  * @param {number} x The x position.
+  * @param {number} y The y position.
+  * @param {string} id The id.
+  * @returns {void}
+  */
   addCoin: function (type, x, y, id) {
     let r;
     let m;
@@ -779,8 +760,8 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /*
-   * handling coins in hole
-   **/
+  * handling coins in hole
+  **/
 
   coinInHole: function (coin, playerId) {
     // red in hole true add poins for red and last coin
@@ -821,7 +802,7 @@ const CarromBoardLayer = CC.Layer.extend({
       } else {
         this.coinsGainedInCurrentStrike = true;
         player.addCount(coin.type);
-        this.pointsLayer.setPlayerPoints(player.getPoints(), 
+        this.pointsLayer.setPlayerPoints(player.getPoints(),
           player.playerData.id, this.player1info.id);
         player.addhistory(coin, this.strikeCount);
         if (player.playerData.id === this.player1info.id) {
@@ -860,15 +841,25 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   addWhiteCoinInPointLayer: function (whiteCoinCount) {
-    let coinPosition = 13 + (27 * whiteCoinCount);
-    let whiteCoin = this.pointsLayer.setEarnedCoins('white',
-      { x: coinPosition, y: 450 }, whiteCoinCount
-    );
-    this.addChild(whiteCoin, 5);
+    console.log(whiteCoinCount);
+    if(whiteCoinCount<7){
+      let coinPosition = 23 + (37 * whiteCoinCount);
+      let whiteCoin = this.pointsLayer.setEarnedCoins('white',
+        { x: coinPosition, y: 450 }, whiteCoinCount
+      );
+      this.addChild(whiteCoin, 5);
+    }
+    else{
+      let coinPosition = 23 + (37 * (whiteCoinCount - 7));
+      let whiteCoin = this.pointsLayer.setEarnedCoins('white',
+        { x: coinPosition, y: 410 }, whiteCoinCount
+      );
+      this.addChild(whiteCoin, 5);
+    }
   },
 
   addBlackCoinInPointLayer: function (blackCoinCount) {
-    let coinPosition = 1020 + (27 * blackCoinCount);
+    let coinPosition = 1022 + (38 * blackCoinCount);
     let blackCoin = this.pointsLayer.setEarnedCoins('black',
       { x: coinPosition, y: 450 }, blackCoinCount + 10
     );
@@ -876,14 +867,14 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   addRedCoinInPointLayer: function (player) {
-    let xPosition = player === 1 ? 50 : 1057;
-    let redCoin = this.pointsLayer.setEarnedCoins('red', {x: xPosition, y: 400}, 100);
+    let xPosition = player === 5 ? 300 : 1167;
+    let redCoin = this.pointsLayer.setEarnedCoins('red', { x: xPosition, y: 410 }, 100);
     this.addChild(redCoin, 5);
   },
 
   /*
-   * Add a coin to center or other near space
-   **/
+  * Add a coin to center or other near space
+  **/
   addCenterAlignedCoin: function (coin) {
     let coinObject = {};
 
@@ -926,7 +917,7 @@ const CarromBoardLayer = CC.Layer.extend({
   isInNewlyAddedCoinsPos: function (x, y) {
     for (let i = this.newlyAddedCoinsPos.length - 1; i >= 0; i = i - 1) {
       let position = this.newlyAddedCoinsPos[i];
-      if (position.x === x && position.y ===y) {
+      if (position.x === x && position.y === y) {
         return true;
       }
     }
@@ -934,8 +925,8 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /*
-   * find free space to add new coin
-   */
+  * find free space to add new coin
+  */
   checkExistenceOfCoinInCenter: function (x, y, radiusFactor, angle) {
     let adjacentCoins = this.checkExistenceOfCoin(x, y, Config.coinRadius);
     if (adjacentCoins || this.isInNewlyAddedCoinsPos(x, y)) {
@@ -958,8 +949,8 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /*
-   * Check existance of coin in specified co-ordinate
-   **/
+  * Check existance of coin in specified co-ordinate
+  **/
   checkExistenceOfCoin: function (x, y, r) {
     let adjacentCoins = this.space.nearestPointQueryNearest(
       CP.v(x, y),
@@ -1006,7 +997,7 @@ const CarromBoardLayer = CC.Layer.extend({
 
     // for last pocketed coin is red
     if (player.playerData.redCoinInHole) {
-      this.addCenterAlignedCoin({ type: 'red', id: 'r1'});
+      this.addCenterAlignedCoin({ type: 'red', id: 'r1' });
       player.setRedCoinStatus(false);
     }
     this.coinsGainedInCurrentStrike = false;
@@ -1052,7 +1043,7 @@ const CarromBoardScene = CC.Scene.extend({
     this._super();
     let pointsLayer = new PointsLayer();
     let layer = new CarromBoardLayer(pointsLayer);
-    this.addChild(layer, 2);
+    this.addChild(layer, 15);
     this.addChild(pointsLayer, 10);
   }
 });

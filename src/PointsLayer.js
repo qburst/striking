@@ -42,15 +42,16 @@ const PointsLayer = CC.Layer.extend({
 
   ctor: function () {
     this._super();
+
     this.ColorL1 = this.utils.createColor(cc.color(0,54,1), 90, 350, 420, 700);
     this.addChild(this.ColorL1,1);
 
     this.ColorL2 = this.utils.createColor(cc.color(0,54,1), 1180, 350, 355, 700);
-    this.addChild(this.ColorL2,1);
+    this.addChild(this.ColorL2,5);
 
     var firstRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1, (CC.color(243, 250, 235)), 15,RectType.Top,{x:180, y:5000});
     firstRoundRect.setPosition(CP.v(30,330));
-    this.addChild(firstRoundRect,4);
+    this.addChild(firstRoundRect,2);
 
     
     var firstCircle = new RoundRect(50, 50, (CC.color(48, 87, 46)), 1, (CC.color(48, 87, 46)), 23,RectType.Top,{x:180, y:5000});
@@ -67,7 +68,7 @@ const PointsLayer = CC.Layer.extend({
 
     var secondRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1, (CC.color(243, 250, 235)), 15,RectType.Top,{x:180, y:5000});
     secondRoundRect.setPosition(CP.v(1030,330));
-    this.addChild(secondRoundRect,4);
+    this.addChild(secondRoundRect,5);
 
     var secondCircle = new RoundRect(50,50, (CC.color(46, 86, 46)), 0.5, (CC.color(46, 86, 46)), 24,RectType.Top,{x:180, y:5000});
     secondCircle .setPosition(CP.v(1035,575));
@@ -95,8 +96,7 @@ const PointsLayer = CC.Layer.extend({
      this.totalCoinsTextP1.setColor(CC.color(149,101,78));
     this.addChild(this.totalCoinsTextP1, 5);
 
-    this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5);
-    this.LineP1.setColor(CC.color(243,250,0));
+    this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5, CC.color(243,250,235));
     this.addChild(this.LineP1, 5);
   
     this.LineP2 = this.utils.createLine({x1:1030,y1:550,x2:1270,y2:550},1.5,CC.color(243,250,235));
@@ -124,46 +124,45 @@ const PointsLayer = CC.Layer.extend({
     this.player1Name.setColor(CC.color(255,247,214));
     this.addChild(this.player1Name, 5);
 
-    
-  
+   
     let player1Coin = this.setEarnedCoins('white', {x: 240, y: 600}, 200);
     player1Coin.setScale(1.3);
-    this.addChild(player1Coin, 6);
+    this.addChild(player1Coin, 5);
    
     let P1coin1 = this.setEarnedCoins('green', {x: 60, y: 450}, 180);
-    P1coin1.setScale(1.0);
+    P1coin1.setScale(0.9);
     this.addChild(P1coin1, 5);
 
-    let P1coin2 = this.setEarnedCoins('green', {x: 100, y: 450}, 180);
-    P1coin2.setScale(1.0);
+    let P1coin2 = this.setEarnedCoins('green', {x: 97, y: 450}, 180);
+    P1coin2.setScale(0.9);
     this.addChild(P1coin2, 5);
 
-    let P1coin3 = this.setEarnedCoins('green', {x: 140, y: 450}, 180);
-    P1coin3.setScale(1.0);
+    let P1coin3 = this.setEarnedCoins('green', {x: 133, y: 450}, 180);
+    P1coin3.setScale(0.9);
     this.addChild(P1coin3, 5);
 
-    let P1coin4= this.setEarnedCoins('green', {x: 180, y: 450}, 180);
-    P1coin4.setScale(1.0);
+    let P1coin4= this.setEarnedCoins('green', {x: 171, y: 450}, 180);
+    P1coin4.setScale(0.9);
     this.addChild(P1coin4, 5);
 
-    let P1coin5 = this.setEarnedCoins('green', {x: 220, y: 450}, 180);
-    P1coin5.setScale(1.0);
+    let P1coin5 = this.setEarnedCoins('green', {x: 208, y: 450}, 180);
+    P1coin5.setScale(0.9);
     this.addChild(P1coin5, 5);
 
-    let P1coin6 = this.setEarnedCoins('green', {x: 260, y: 450}, 180);
-    P1coin6.setScale(1.0);
+    let P1coin6 = this.setEarnedCoins('green', {x: 245, y: 450}, 180);
+    P1coin6.setScale(0.9);
     this.addChild(P1coin6, 5);
 
     let P1coin7 = this.setEarnedCoins('green', {x: 60, y: 410}, 180);
-    P1coin7.setScale(1.0);
+    P1coin7.setScale(0.9);
     this.addChild(P1coin7, 5);
 
-    let P1coin8 = this.setEarnedCoins('green', {x: 100, y: 410}, 180);
-    P1coin8.setScale(1.0);
+    let P1coin8 = this.setEarnedCoins('green', {x: 95, y: 410}, 180);
+    P1coin8.setScale(0.9);
     this.addChild(P1coin8, 5);
 
-    let P1coin9 = this.setEarnedCoins('green', {x: 140, y: 410}, 180);
-    P1coin9.setScale(1.0);
+    let P1coin9 = this.setEarnedCoins('green', {x: 135, y: 410}, 180);
+    P1coin9.setScale(0.9);
     this.addChild(P1coin9, 5);
 
     
@@ -182,39 +181,39 @@ const PointsLayer = CC.Layer.extend({
     this.addChild(this.activePlayerName, 5);
 
     let P2coin1 = this.setEarnedCoins('green', {x:1060, y: 450}, 180);
-    P2coin1.setScale(1.0);
+    P2coin1.setScale(0.9);
     this.addChild(P2coin1, 5);
 
-    let P2coin2 = this.setEarnedCoins('green', {x: 1100, y: 450}, 180);
-    P2coin2.setScale(1.0);
+    let P2coin2 = this.setEarnedCoins('green', {x: 1097, y: 450}, 180);
+    P2coin2.setScale(0.9);
     this.addChild(P2coin2, 5);
 
-    let P2coin3 = this.setEarnedCoins('green', {x: 1140, y: 450}, 180);
-    P2coin3.setScale(1.0);
+    let P2coin3 = this.setEarnedCoins('green', {x: 1135, y: 450}, 180);
+    P2coin3.setScale(0.9);
     this.addChild(P2coin3, 5);
 
-    let P2coin4= this.setEarnedCoins('green', {x: 1180, y: 450}, 180);
-    P2coin4.setScale(1.0);
+    let P2coin4= this.setEarnedCoins('green', {x: 1175, y: 450}, 180);
+    P2coin4.setScale(0.9);
     this.addChild(P2coin4, 5);
 
-    let P2coin5 = this.setEarnedCoins('green', {x: 1220, y: 450}, 180);
-    P2coin5.setScale(1.0);
+    let P2coin5 = this.setEarnedCoins('green', {x: 1214, y: 450}, 180);
+    P2coin5.setScale(0.9);
     this.addChild(P2coin5, 5);
 
-    let P2coin6 = this.setEarnedCoins('green', {x: 1260, y: 450}, 180);
-    P2coin6.setScale(1.0);
+    let P2coin6 = this.setEarnedCoins('green', {x: 1252, y: 450}, 180);
+    P2coin6.setScale(0.9);
     this.addChild(P2coin6, 5);
 
-    let P2coin7 = this.setEarnedCoins('green', {x: 1060, y: 410}, 180);
-    P2coin7.setScale(1.0);
+    let P2coin7 = this.setEarnedCoins('green', {x: 1055, y: 410}, 180);
+    P2coin7.setScale(0.9);
     this.addChild(P2coin7, 5);
 
-    let P2coin8 = this.setEarnedCoins('green', {x: 1100, y: 410}, 180);
-    P2coin8.setScale(1.0);
+    let P2coin8 = this.setEarnedCoins('green', {x: 1095, y: 410}, 180);
+    P2coin8.setScale(0.9);
     this.addChild(P2coin8, 5);
 
-    let P2coin9 = this.setEarnedCoins('green', {x: 1140, y: 410}, 180);
-    P2coin9.setScale(1.0);
+    let P2coin9 = this.setEarnedCoins('green', {x: 1135, y: 410}, 180);
+    P2coin9.setScale(0.9);
     this.addChild(P2coin9, 5);
 
     // this.totalCoinsTextP2 = this.utils.createtextLabels('Total Points', 'iAmRockFont', 20,
@@ -226,7 +225,8 @@ const PointsLayer = CC.Layer.extend({
 
   setPlayerName: function (name, playerId, p1) {
     if (playerId === p1) {
-      this.player1Name.setString(name);
+      this.player1Name.setString(name); 
+ 
     } else {
       this.player2Name.setString(name);
     }
@@ -249,6 +249,8 @@ const PointsLayer = CC.Layer.extend({
       this.positionValueP1.setString(position);
       this.forceValueP1.setString(force);
       this.angleValueP1.setString(angle);
+      this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5, CC.color(3, 183, 17));
+      this.addChild(this.LineP1,5);
     } else {
       this.positionValueP2.setString(position);
       this.forceValueP2.setString(force);

@@ -841,8 +841,7 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   addWhiteCoinInPointLayer: function (whiteCoinCount) {
-    console.log(whiteCoinCount);
-    if(whiteCoinCount<7){
+    if(whiteCoinCount < 7 ){
       let coinPosition = 23 + (37 * whiteCoinCount);
       let whiteCoin = this.pointsLayer.setEarnedCoins('white',
         { x: coinPosition, y: 450 }, whiteCoinCount
@@ -850,7 +849,7 @@ const CarromBoardLayer = CC.Layer.extend({
       this.addChild(whiteCoin, 5);
     }
     else{
-      let coinPosition = 23 + (37 * (whiteCoinCount - 7));
+      let coinPosition = 60 + (37 * (whiteCoinCount - 7));
       let whiteCoin = this.pointsLayer.setEarnedCoins('white',
         { x: coinPosition, y: 410 }, whiteCoinCount
       );
@@ -859,15 +858,24 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   addBlackCoinInPointLayer: function (blackCoinCount) {
-    let coinPosition = 1022 + (38 * blackCoinCount);
-    let blackCoin = this.pointsLayer.setEarnedCoins('black',
-      { x: coinPosition, y: 450 }, blackCoinCount + 10
-    );
-    this.addChild(blackCoin, 5);
-  },
+    if (blackCoinCount < 7 ){
 
+      let coinPosition = 1022 + (38 * blackCoinCount);
+      let blackCoin = this.pointsLayer.setEarnedCoins('black',
+        { x: coinPosition, y: 450 }, blackCoinCount + 10
+      );
+      this.addChild(blackCoin, 5);
+    }
+    else{
+      let coinPosition = 1057 + (38 * (blackCoinCount - 7));
+      let blackCoin = this.pointsLayer.setEarnedCoins('black',
+        { x: coinPosition, y: 410 }, blackCoinCount + 10
+      );
+      this.addChild(blackCoin, 5);
+    }
+  },
   addRedCoinInPointLayer: function (player) {
-    let xPosition = player === 5 ? 300 : 1167;
+    let xPosition = player === 1 ? 170 : 1167;
     let redCoin = this.pointsLayer.setEarnedCoins('red', { x: xPosition, y: 410 }, 100);
     this.addChild(redCoin, 5);
   },

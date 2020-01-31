@@ -54,31 +54,31 @@ const PointsLayer = CC.Layer.extend({
     this.addChild(firstRoundRect,2);
 
     
-    var firstCircle = new RoundRect(50, 50, (CC.color(48, 87, 46)), 1, (CC.color(48, 87, 46)), 23,RectType.Top,{x:180, y:5000});
-    firstCircle .setPosition(CP.v(214,575));
-    this.addChild(firstCircle ,5); 
+    this.firstCircle = new RoundRect(50, 50, (CC.color(48, 87, 46)), 1.2, (CC.color(48, 87, 46)), 24,RectType.Top,{x:180, y:5000});
+    this.firstCircle.setPosition(CP.v(214,575));
+    this.addChild(this.firstCircle ,5); 
 
 
     var SmallRect1 = new RoundRect(170, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(165, 105, 80)), 7,RectType.Top,{x:180, y:5000});
     SmallRect1.setPosition(CP.v(70,475));
     this.addChild(SmallRect1,5);
 
-    this.Line1 = this.utils.createLine({x1:40,y1:380,x2:270,y2:380}, 0.5, CC.color(157, 96, 73));
+    this.Line1 = this.utils.createLine({x1:40,y1:380,x2:270,y2:380}, 0.8, CC.color(157, 96, 73));
     this.addChild(this.Line1, 5);
 
     var secondRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1, (CC.color(243, 250, 235)), 15,RectType.Top,{x:180, y:5000});
     secondRoundRect.setPosition(CP.v(1030,330));
     this.addChild(secondRoundRect,5);
 
-    var secondCircle = new RoundRect(50,50, (CC.color(46, 86, 46)), 0.5, (CC.color(46, 86, 46)), 24,RectType.Top,{x:180, y:5000});
-    secondCircle .setPosition(CP.v(1035,575));
-    this.addChild(secondCircle ,5); 
+    this.secondCircle = new RoundRect(50,50, (CC.color(3,183,17)), 0.5, (CC.color(48, 87, 46)), 24,RectType.Top,{x:180, y:5000});
+    this.secondCircle .setPosition(CP.v(1035,575));
+    this.addChild(this.secondCircle ,5); 
  
-    var SmallRect2 = new RoundRect(170, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(165, 105, 80)), 7,RectType.Top,{x:180, y:5000});
+    var SmallRect2 = new RoundRect(170, 40, (CC.color(255, 247, 214)), 1.2, (CC.color(101,101,101)), 7,RectType.Top,{x:180, y:5000});
     SmallRect2.setPosition(CP.v(1070,475));
     this.addChild(SmallRect2,5);
 
-    this.Line2 = this.utils.createLine({x1:1040,y1:380,x2:1270,y2:380}, 0.5, CC.color(157, 96, 73));
+    this.Line2 = this.utils.createLine({x1:1040,y1:380,x2:1270,y2:380}, 0.8, CC.color(53, 53, 53));
     this.addChild(this.Line2, 5);
 
     this.collectedTextP1 = this.utils.createtextLabels('Coins Earned', 'iAmRockFont', 20,
@@ -88,8 +88,8 @@ const PointsLayer = CC.Layer.extend({
 
     this.collectedTextP2 = this.utils.createtextLabels('Coins Earned', 'iAmRockFont', 20,
      {x: 1153, y: 490});
-    this.collectedTextP2.setColor(CC.color(185,141,126));
-    this.addChild(this.collectedTextP2, 5);
+    this.collectedTextP2.setColor(CC.color(53, 53, 53));
+    this.addChild(this.collectedTextP2, 6);
 
     this.totalCoinsTextP1 = this.utils.createtextLabels('Total Coins :', 'iAmRockFont', 18,
      {x: 100, y: 350});
@@ -106,7 +106,7 @@ const PointsLayer = CC.Layer.extend({
    
     this.totalCoinsTextP2 = this.utils.createtextLabels('Total Coins :', 'iAmRockFont', 18,
      {x: 1100, y: 350});
-     this.totalCoinsTextP2.setColor(CC.color(149,101,78));
+     this.totalCoinsTextP2.setColor(CC.color(53, 53, 53));
     this.addChild(this.totalCoinsTextP2, 5);
 
     this.P1total = this.utils.createtextLabels('0', 'iAmRockFont', 18,
@@ -116,7 +116,7 @@ const PointsLayer = CC.Layer.extend({
 
     this.P2total = this.utils.createtextLabels('0', 'iAmRockFont', 18,
      {x: 1250, y: 350});
-    this.P2total.setColor(CC.color(136,80,55));
+    this.P2total.setColor(CC.color(53, 53, 53));
     this.addChild(this.P2total, 5);
     
     this.player1Name = this.utils.createtextLabels('player1', 'makidoFont', 26,
@@ -157,11 +157,11 @@ const PointsLayer = CC.Layer.extend({
     P1coin7.setScale(0.9);
     this.addChild(P1coin7, 5);
 
-    let P1coin8 = this.setEarnedCoins('green', {x: 95, y: 410}, 180);
+    let P1coin8 = this.setEarnedCoins('green', {x: 97, y: 410}, 180);
     P1coin8.setScale(0.9);
     this.addChild(P1coin8, 5);
 
-    let P1coin9 = this.setEarnedCoins('green', {x: 135, y: 410}, 180);
+    let P1coin9 = this.setEarnedCoins('green', {x: 133, y: 410}, 180);
     P1coin9.setScale(0.9);
     this.addChild(P1coin9, 5);
 
@@ -204,11 +204,11 @@ const PointsLayer = CC.Layer.extend({
     P2coin6.setScale(0.9);
     this.addChild(P2coin6, 5);
 
-    let P2coin7 = this.setEarnedCoins('green', {x: 1055, y: 410}, 180);
+    let P2coin7 = this.setEarnedCoins('green', {x: 1060, y: 410}, 180);
     P2coin7.setScale(0.9);
     this.addChild(P2coin7, 5);
 
-    let P2coin8 = this.setEarnedCoins('green', {x: 1095, y: 410}, 180);
+    let P2coin8 = this.setEarnedCoins('green', {x: 1097, y: 410}, 180);
     P2coin8.setScale(0.9);
     this.addChild(P2coin8, 5);
 
@@ -242,6 +242,22 @@ const PointsLayer = CC.Layer.extend({
 
   setActivePlayer: function (name) {
     this.activePlayerName.setString(name);
+    if (name  === 'Player 1'){
+      this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5, CC.color(3,183,17));
+      this.addChild(this.LineP1, 5);
+      this.LineP2 = this.utils.createLine({x1:1030,y1:550,x2:1270,y2:550},1.5,CC.color(243,250,235));
+      this.addChild(this.LineP2, 5);
+      this.secondCircle.setPosition(CP.v(214,575));
+      this.firstCircle.setPosition(CP.v(1035,575));
+    }
+    else{
+      this.LineP2 = this.utils.createLine({x1:1030,y1:550,x2:1270,y2:550},1.5,CC.color(3, 183, 17));
+      this.addChild(this.LineP2, 5);
+      this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5, CC.color(243,250,235));
+      this.addChild(this.LineP1, 5);
+      this.firstCircle.setPosition(CP.v(214,575));
+      this.secondCircle.setPosition(CP.v(1035, 575));
+    }
   },
 
   setActiveForce: function (position, force, angle, playerId, p1) {
@@ -249,8 +265,6 @@ const PointsLayer = CC.Layer.extend({
       this.positionValueP1.setString(position);
       this.forceValueP1.setString(force);
       this.angleValueP1.setString(angle);
-      this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5, CC.color(3, 183, 17));
-      this.addChild(this.LineP1,5);
     } else {
       this.positionValueP2.setString(position);
       this.forceValueP2.setString(force);

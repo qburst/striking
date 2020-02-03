@@ -27,18 +27,18 @@ const Resources = {
   red: 'res/redcoin.png',
   stricker: 'res/stricker.png',
   hole: 'res/round.png',
-  collectedCoinsBG: 'res/pointsbg.png',
   iAmRockFont: 'res/fonts/i_am_a_rock/IAmaRock_Free_For_Personal_Use_Only.ttf',
   makidoFont: 'res/fonts/MikadoBold_DEMO.otf',
-  oswald : 'res/fonts/Oswald-Regular.ttf' ,
-  oswaldbold : 'res/fonts/Oswald-Bold.ttf',
+  oswaldregular : 'res/fonts/OswaldRegular.ttf' ,
+  oswaldbold : 'res/fonts/OswaldBold.ttf',
   winsBG: 'res/wins.png',
   bot2Pot: 'res/bot_2_pot.png',
   bar: 'res/color-bar-red.jpg',
   forceArrow: 'res/arrow.svg',
   circleSprite: 'res/circle_range.svg',
   dottedLine: 'res/line.svg',
-  exitButton: 'res/exit.png'
+  exitButton: 'res/exit.png',
+  circleon : 'res/circle.svg'
 };
 
 Resources.getResourceMeta = () => {

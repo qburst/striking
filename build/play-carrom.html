@@ -87,17 +87,25 @@ canvas {
   background-color: rgba(0, 0, 0, 0);
 }
 
+
 @font-face {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'oswaldregular';
     font-style: normal;
     font-weight: 400;
-    src: local('iAmRockFont'), url(res/fonts/i_am_a_rock/IAmaRock_Free_For_Personal_Use_Only.ttf) format('truetype');
+    src: url(res/fonts/OswaldRegular.ttf) format('truetype');
 }
 @font-face {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'oswaldbold';
+    font-style: normal;
+    font-weight: 900;
+    src: url(res/fonts/OswaldBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'makidoFont';
     font-style: normal;
     font-weight: 400;
-    src: url(res/fonts/Oswald-Regular.ttf) format('opentype');
+    src: local('makidoFont'), url(res/fonts/MikadoBold_DEMO.otf) format('opentype');
 }
 </style>
 </head>
@@ -118,6 +126,7 @@ canvas {
                     var ctx = gameCanvas.getContext('2d');
                     ctx.fillStyle = '#000000';
                     ctx.fillRect(0, 0, 1, 1);
+                    ctx.font = "30px Arial";
                 }
             }
         }

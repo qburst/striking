@@ -82,17 +82,17 @@ const PointsLayer = CC.Layer.extend({
     this.Line2 = this.utils.createLine({x1:1045,y1:380,x2:1265,y2:380}, 0.8, CC.color(53, 53, 53));
     this.addChild(this.Line2, 5);
 
-    this.collectedTextP1 = this.utils.createtextLabels('Coins Earned', 'oswaldregular', 20,
-     {x: 155, y: 490});
+    this.collectedTextP1 = this.utils.createtextLabels('Coins Earned', 'Oswald', 21,
+     {x: 155, y: 487});
     this.collectedTextP1.setColor(CC.color(136, 80, 55));
     this.addChild(this.collectedTextP1, 5);
 
-    this.collectedTextP2 = this.utils.createtextLabels('Coins Earned', 'oswaldregular', 20,
-     {x: 1153, y: 490});
+    this.collectedTextP2 = this.utils.createtextLabels('Coins Earned', 'Oswald', 21,
+     {x: 1153, y: 487});
     this.collectedTextP2.setColor(CC.color(53, 53, 53));
     this.addChild(this.collectedTextP2, 6);
 
-    this.totalCoinsTextP1 = this.utils.createtextLabels('Total Coins :', 'oswaldregular', 18,
+    this.totalCoinsTextP1 = this.utils.createtextLabels('Total Coins :', 'Oswald', 19,
      {x: 100, y: 350});
      this.totalCoinsTextP1.setColor(CC.color(149,101,78));
     this.addChild(this.totalCoinsTextP1, 5);
@@ -105,25 +105,25 @@ const PointsLayer = CC.Layer.extend({
 
     
    
-    this.totalCoinsTextP2 = this.utils.createtextLabels('Total Coins :', 'oswaldregular', 18,
+    this.totalCoinsTextP2 = this.utils.createtextLabels('Total Coins :', "Oswald", 19,
      {x: 1100, y: 350});
      this.totalCoinsTextP2.setColor(CC.color(53, 53, 53));
     this.addChild(this.totalCoinsTextP2, 5);
 
-    this.P1total = this.utils.createtextLabels('0', 'oswaldbold', 18,
+    this.P1total = this.utils.createtextLabels('0', "Oswald", 21,
      {x: 250, y: 350});
     this.P1total.setColor(CC.color(136,80,55));
     this.addChild(this.P1total, 5);
 
-    this.P2total = this.utils.createtextLabels('0', 'iAmRockFont', 18,
+    this.P2total = this.utils.createtextLabels('0', 'Oswald', 21,
      {x: 1250, y: 350});
     this.P2total.setColor(CC.color(53, 53, 53));
     this.addChild(this.P2total, 5);
     
-    this.player1Name = this.utils.createtextLabels('player1', 'oswaldregular', 26,
+    this.player1Name = this.utils.createtextLabels('player1', "Oswald", 27,
      {x: 80, y: 600});
     this.player1Name.setColor(CC.color(255,247,214));
-    this.addChild(this.player1Name,6);
+    this.addChild(this.player1Name,5);
 
    
     let player1Coin = this.setEarnedCoins('white', {x: 240, y: 600}, 200);
@@ -167,7 +167,7 @@ const PointsLayer = CC.Layer.extend({
     this.addChild(P1coin9, 5);
 
     
-    this.player2Name = this.utils.createtextLabels('player2', 'oswaldregular', 26,
+    this.player2Name = this.utils.createtextLabels('player2', 'Oswald', 27,
      {x: 1220, y: 600});
     this.player2Name.setColor(CC.color(255,247,214));
     this.addChild(this.player2Name, 5);
@@ -242,7 +242,7 @@ const PointsLayer = CC.Layer.extend({
   },
 
   setActivePlayer: function (name) {
-    this.activePlayerName.setString(name);
+    this.activePlayerName.setString("");
     if (name  === 'Player 1'){
       this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5, CC.color(3,183,17));
       this.addChild(this.LineP1, 5);

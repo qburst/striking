@@ -29,8 +29,6 @@ const Resources = {
   hole: 'res/round.png',
   iAmRockFont: 'res/fonts/i_am_a_rock/IAmaRock_Free_For_Personal_Use_Only.ttf',
   makidoFont: 'res/fonts/MikadoBold_DEMO.otf',
-  oswaldregular : 'res/fonts/OswaldRegular.ttf' ,
-  oswaldbold : 'res/fonts/OswaldBold.ttf',
   winsBG: 'res/wins.png',
   bot2Pot: 'res/bot_2_pot.png',
   bar: 'res/color-bar-red.jpg',

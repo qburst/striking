@@ -64,7 +64,7 @@ export default class Player {
     case 'black': points = 1;
       this.playerData.blackCoinCount = this.playerData.blackCoinCount + 1;
       break;
-    case 'red': points = 0;
+    case 'red': points = 1;
       this.playerData.redCoinCount = 1;
       break;
     default: break;

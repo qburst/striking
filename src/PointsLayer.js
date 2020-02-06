@@ -59,7 +59,7 @@ const PointsLayer = CC.Layer.extend({
     this.addChild(this.firstCircle ,5); 
 
 
-    var SmallRect1 = new RoundRect(230, 40, (CC.color(255, 247, 214)), 1.2, (CC.color(165, 105, 80)), 6,RectType.Top,{x:180, y:5000});
+    var SmallRect1 = new RoundRect(230, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(165, 105, 80)), 6,RectType.Top,{x:180, y:5000});
     SmallRect1.setPosition(CP.v(40,475));
     this.addChild(SmallRect1,5);
 
@@ -75,7 +75,7 @@ const PointsLayer = CC.Layer.extend({
     this.secondCircle.setOpacity(100);
     this.addChild(this.secondCircle ,5); 
  
-    var SmallRect2 = new RoundRect(230, 40, (CC.color(255, 247, 214)), 1.2, (CC.color(101,101,101)), 6,RectType.Top,{x:180, y:5000});
+    var SmallRect2 = new RoundRect(230, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(101,101,101)), 6,RectType.Top,{x:180, y:5000});
     SmallRect2.setPosition(CP.v(1040,475));
     this.addChild(SmallRect2,5);
 

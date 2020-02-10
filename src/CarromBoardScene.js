@@ -19,6 +19,7 @@
 
 ****************************************************************************************/
 
+
 import {CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,
   COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER} from './globals';
 import Config from './config';

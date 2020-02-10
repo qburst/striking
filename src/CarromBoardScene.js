@@ -20,7 +20,7 @@
 ****************************************************************************************/
 
 import {CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,
-  COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER} from './globals';
+        COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER} from './globals';
 import Config from './config';
 import Resources from './resource';
 import Carrom from './objects/Carrom';

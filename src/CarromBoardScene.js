@@ -1,5 +1,5 @@
 /****************************************************************************************
-  
+ 
     Striking is a simulation of a carrom board play where 2 players can 
     play carrom board (board version) using a browser. 
 

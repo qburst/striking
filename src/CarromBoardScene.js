@@ -1,7 +1,7 @@
 /****************************************************************************************
- 
+  
     Striking is a simulation of a carrom board play where 2 players can 
-    play carrom board (board version) using a browser.
+    play carrom board (board version) using a browser. 
 
     Copyright © 2019  QBurst Technologies 
 
@@ -16,7 +16,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.txt />. 
-    
+
 ****************************************************************************************/
 
 import {CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,

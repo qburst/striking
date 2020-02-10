@@ -1,7 +1,20 @@
-import {
-  CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,
-  COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER
-} from './globals';
+/****************************************************************************************
+    Striking is a simulation of a carrom board play where 2 players can 
+    play carrom board (board version) using a browser. 
+    Copyright © 2019  QBurst Technologies 
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.txt />. 
+****************************************************************************************/
+
+import {CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,
+  COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER} from './globals';
 import Config from './config';
 import Resources from './resource';
 import Carrom from './objects/Carrom';
@@ -126,13 +139,13 @@ const CarromBoardLayer = CC.Layer.extend({
   addmouseEvents: function () {
     CC.eventManager.addListener({
       event: CC.EventListener.MOUSE,
-      onMouseMove: (event) => {
+      onMouseMove: (event)=> {
         this.mouseOnMove(event);
       },
-      onMouseUp: (event) => {
+      onMouseUp: (event)=> {
         this.mouseUp(event);
       },
-      onMouseDown: (event) => {
+      onMouseDown: (event)=> {
         this.mouseDown(event);
       }
     }, this);
@@ -285,7 +298,7 @@ const CarromBoardLayer = CC.Layer.extend({
     let y = !this.leftSideSelected ? (this.stricker.body.p.y +
       ((100 * slope) / Math.sqrt(1 + Math.pow(slope, 2)))) : (this.stricker.body.p.y -
         ((100 * slope) / Math.sqrt(1 + Math.pow(slope, 2))));
-    return { x: x, y: y };
+    return {x: x, y: y};
   },
 
   addDottedLine: function () {
@@ -385,8 +398,8 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-  * Initialize physics space, enable debugmode.
-  * @returns {void}
+    * Initialize physics space, enable debugmode.
+    * @returns {void}
   */
   initPhysics: function () {
     this.space = new CP.Space();
@@ -398,8 +411,8 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-  * Enable debugmode.
-  * @returns {void}
+    * Enable debugmode.
+    * @returns {void}
   */
   initDebugMode: function () {
     let phDebugNode = CC.PhysicsDebugNode.create(this.space);
@@ -407,12 +420,12 @@ const CarromBoardLayer = CC.Layer.extend({
     this.addChild(phDebugNode, 25);
   },
   /**
-  * Add carrom board to the scene.
-  * @returns {void}
+    * Add carrom board to the scene.
+    * @returns {void}
   */
   addBoardSprite: function () {
     let carromBoardSprite = new CC.Sprite(Resources.carromBG);
-    carromBoardSprite.setPosition(CP.v(this.size.width / 2, this.size.height / 2));
+    carromBoardSprite.setPosition(CP.v(this.size.width /2, this.size.height /2));
     this.addChild(carromBoardSprite, 0.2);
   },
 
@@ -425,21 +438,21 @@ const CarromBoardLayer = CC.Layer.extend({
 
   changeGameState: function (state) {
     switch (state) {
-      case 'initialize': this.initilizeCoinsandWalls();
-        break;
-      case 'start': this.startGame();
-        break;
-      case 'wait': this.waitLogic();
-        break;
-      case 'end': this.gameEndLogic();
-        break;
-      default: break;
+    case 'initialize': this.initilizeCoinsandWalls();
+      break;
+    case 'start': this.startGame();
+      break;
+    case 'wait': this.waitLogic();
+      break;
+    case 'end': this.gameEndLogic();
+      break;
+    default: break;
     }
   },
 
   /**
-  * game state initialize logic.Add board, coins, walls.
-  * @returns {void}
+    * game state initialize logic.Add board, coins, walls.
+    * @returns {void}
   */
   initilizeCoinsandWalls: function () {
     this.addBoardSprite();
@@ -486,7 +499,7 @@ const CarromBoardLayer = CC.Layer.extend({
     );
   },
 
-  // to rotate initial coin position in a random angle while restart
+   // to rotate initial coin position in a random angle while restart
 
   getRandomCoinPosition: function (coinsArray) {
     let angle = Math.random() * (6.28 - 0.1) + 0.1;
@@ -502,12 +515,12 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-  * The Game loop. Business rules implemented here.
-  * @returns {void}
+    * The Game loop. Business rules implemented here.
+    * @returns {void}
   */
   updateLoop: function () {
     if (!this.isGameEnd) {
-      this.space.step(1 / 60);
+      this.space.step(1/60);
       if (this.stricker) {
         this.stricker.update();
       }
@@ -547,7 +560,7 @@ const CarromBoardLayer = CC.Layer.extend({
     let winnerData = this.checkGameEnd();
     if (winnerData && winnerData.isGameEnd) {
       let carromBoardSprite = new CC.Sprite(Resources.winsBG);
-      carromBoardSprite.setPosition(CP.v(this.size.width / 2, this.size.height / 2));
+      carromBoardSprite.setPosition(CP.v(this.size.width/2, this.size.height/2));
       this.addChild(carromBoardSprite, 40);
 
       let playerName = this.utils.createtextLabels(winnerData.name +
@@ -560,7 +573,7 @@ const CarromBoardLayer = CC.Layer.extend({
       carromBoardSprite.runAction(animation);
       this.isGameEnd = true;
     } else {
-      // for strike count
+        // for strike count
       let player = this.getPlayer();
       if (!player.playerData.redCoinInHole) {
         this.changePlayer();
@@ -636,20 +649,20 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-  * cocos update loop
-  * @param {number} dt The value.
-  * @returns {void}
+    * cocos update loop
+    * @param {number} dt The value.
+    * @returns {void}
   */
   update: function (dt) {
-    // console.log(dt)
+    console.log(dt)
   },
 
   /**
-  * create carrom board boundary.
-  * @param {number} width The width.
-  * @param {number} height The height.
-  * @param {number} position The position.
-  * @returns {void}
+    * create carrom board boundary.
+    * @param {number} width The width.
+    * @param {number} height The height.
+    * @param {number} position The position.
+    * @returns {void}
   */
   addBoundary: function (width, height, position) {
     this.boundary = new Boundary(this.space, {
@@ -674,12 +687,12 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /**
-  * create coins and striker and add to scene.
-  * @param {string} type The type.
-  * @param {number} x The x position.
-  * @param {number} y The y position.
-  * @param {string} id The id.
-  * @returns {void}
+    * create coins and striker and add to scene.
+    * @param {string} type The type.
+    * @param {number} x The x position.
+    * @param {number} y The y position.
+    * @param {string} id The id.
+    * @returns {void}
   */
   addCoin: function (type, x, y, id) {
     let r;
@@ -760,8 +773,8 @@ const CarromBoardLayer = CC.Layer.extend({
   },
 
   /*
-  * handling coins in hole
-  **/
+    * handling coins in hole
+    **/
 
   coinInHole: function (coin, playerId) {
     // red in hole true add poins for red and last coin
@@ -802,7 +815,7 @@ const CarromBoardLayer = CC.Layer.extend({
       } else {
         this.coinsGainedInCurrentStrike = true;
         player.addCount(coin.type);
-        this.pointsLayer.setPlayerPoints(player.getPoints(),
+        this.pointsLayer.setPlayerPoints(player.getPoints(), 
           player.playerData.id, this.player1info.id);
         player.addhistory(coin, this.strikeCount);
         if (player.playerData.id === this.player1info.id) {
@@ -1005,7 +1018,7 @@ const CarromBoardLayer = CC.Layer.extend({
 
     // for last pocketed coin is red
     if (player.playerData.redCoinInHole) {
-      this.addCenterAlignedCoin({ type: 'red', id: 'r1' });
+      this.addCenterAlignedCoin({ type: 'red', id: 'r1'});
       player.setRedCoinStatus(false);
     }
     this.coinsGainedInCurrentStrike = false;

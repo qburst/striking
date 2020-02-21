@@ -96,12 +96,6 @@ let RoundRect = CC.DrawNode.extend({
   this.width = width;
   this.height = height;
   this.position = CC.p(position.x, position.y);
-  // lineColor = lineColor || this.getDrawColor();
-
-  // [lineColor, (fillColor || {})].forEach(function (obj) {
-  //   obj.a === obj.a !== null ? obj.a : 255
-  // })
-
   if (fillColor) {
     this.drawPoly(getVertices(CC.p(0, 0), CC.p(width, height), fillColor, lineWidth, lineColor, borderRadius, type,position), fillColor, lineWidth, lineColor || CC.color(255, 255, 255));
   } else {

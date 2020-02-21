@@ -22,7 +22,6 @@
 import {CC, CP} from './globals';
 import Utils from './objects/Utils';
 import Resources from './resource';
-// import { throws } from 'assert';
 import RoundRect from './RoundRect';
 import RectType from './RoundRect';
 

@@ -1,5 +1,5 @@
 /****************************************************************************************
-  
+
     Striking is a simulation of a carrom board play where 2 players can 
     play carrom board (board version) using a browser. 
 
@@ -18,7 +18,6 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.txt />. 
 
 ****************************************************************************************/
-
 
 import {CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,
   COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER} from './globals';

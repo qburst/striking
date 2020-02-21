@@ -31,8 +31,7 @@ export default class Utils {
 
   // create labels
   createtextLabels(placeholder, fontname, fontsize, position) {
-    // console.log(Resources.getFontLoaded(fontname));
-    this.textLabels= new CC.LabelTTF(placeholder, 'iAmRockFont', fontsize);
+    this.textLabels= new CC.LabelTTF(placeholder,"Oswald",fontsize,position);
     this.textLabels.x = position ? position.x : '';
     this.textLabels.y = position ? position.y : '';
     this.textLabels.setColor(CC.color(0, 0, 0));
@@ -55,5 +54,20 @@ export default class Utils {
     this.newButton.y = position.y;
     return this.newButton;
   }
+  createLine(position,width,color){
+    this.Line = new CC.DrawNode();
+    this.Line.drawSegment(CC.p(position.x1,position.y1), CC.p(position.x2,position.y2),width,color);
+    return this.Line;
+  }
+  createColor(color,x,y, width, height){
+    this.colorLayer = new CC.LayerGradient(CC.color(5, 101, 3), CC.color(0, 44, 0), CC.p(1,1));
+    this.colorLayer.ignoreAnchorPointForPosition(false);
+    this.colorLayer.width = width;
+    this.colorLayer.height = height;
+    this.colorLayer.x = x;
+    this.colorLayer.y = y;
+    return this.colorLayer;
+  }
+   
 
 }

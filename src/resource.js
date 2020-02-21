@@ -24,11 +24,10 @@ const Resources = {
   carromBG: 'res/flatboard.png',
   black: 'res/blackcoin.png',
   white: 'res/whitecoin.png',
+  green: 'res/oval-copy-3.png',
   red: 'res/redcoin.png',
   stricker: 'res/stricker.png',
   hole: 'res/round.png',
-  blueBG: 'res/bg.png',
-  collectedCoinsBG: 'res/pointsbg.png',
   iAmRockFont: 'res/fonts/i_am_a_rock/IAmaRock_Free_For_Personal_Use_Only.ttf',
   makidoFont: 'res/fonts/MikadoBold_DEMO.otf',
   winsBG: 'res/wins.png',
@@ -37,7 +36,8 @@ const Resources = {
   forceArrow: 'res/arrow.svg',
   circleSprite: 'res/circle_range.svg',
   dottedLine: 'res/line.svg',
-  exitButton: 'res/exit.png'
+  exitButton: 'res/exit.png',
+  circleon : 'res/circle.svg'
 };
 
 Resources.getResourceMeta = () => {

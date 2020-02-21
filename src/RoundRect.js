@@ -1,6 +1,5 @@
 import {
-  CC, CP, COLLISION_TYPE_COIN_HOLE, COLLISION_TYPE_COIN,
-  COLLISION_TYPE_STRICKER_HOLE, COLLISION_TYPE_STRICKER
+  CC
 } from './globals';
 let RectType = {
   TOP: 1,      // Only top side corners will be rounded
@@ -9,10 +8,10 @@ let RectType = {
   LEFT: 4      // Only left side corners will be rounded
 }
 
-let RoundRect = cc.DrawNode.extend({
+let RoundRect = CC.DrawNode.extend({
   ctor: function (width, height, fillColor, lineWidth, lineColor, borderRadius, type,position) {
   this._super();
-  function getVertices(origin, destination, fillColor, lineWidth, lineColor, rad) {
+  function getVertices(origin, destination, fillC, lineW, lineC, rad) {
     let vertices = [],
       radius = rad || 8,
       segments = 20,
@@ -31,8 +30,8 @@ let RoundRect = cc.DrawNode.extend({
           x: destination.x - radius,
           y: origin.y + radius
         }
-        for (var i = segments / 2; i <= (segments - segments / 4); i++) {
-          var rads = i * coef,
+        for (let i = segments / 2; i <= (segments - segments / 4); i = i + 1) {
+         let rads = i * coef,
             j = radius * Math.cos(rads + CC.degreesToRadians(90)) + center.x,
             k = radius * Math.sin(rads + CC.degreesToRadians(90)) + center.y;
           vertices.push(CC.p(j, k));
@@ -51,8 +50,8 @@ let RoundRect = cc.DrawNode.extend({
         x: destination.x - radius,
         y: destination.y - radius
       }
-      for (var i = (segments - segments / 4); i <= segments; i++) {
-        var rads = i * coef,
+      for (let i = (segments - segments / 4); i <= segments; i = i + 1) {
+        let rads = i * coef,
           j = radius * Math.cos(rads + CC.degreesToRadians(90)) + center.x,
           k = radius * Math.sin(rads + CC.degreesToRadians(90)) + center.y;
         vertices.push(CC.p(j, k));
@@ -67,8 +66,8 @@ let RoundRect = cc.DrawNode.extend({
         x: origin.x + radius,
         y: destination.y - radius
       }
-      for (var i = 0; i <= segments / 4; i++) {
-        var rads = i * coef,
+      for (let i = 0; i <= segments / 4; i = i + 1) {
+        let rads = i * coef,
           j = radius * Math.cos(rads + CC.degreesToRadians(90)) + center.x,
           k = radius * Math.sin(rads + CC.degreesToRadians(90)) + center.y;
         vertices.push(CC.p(j, k));
@@ -83,8 +82,8 @@ let RoundRect = cc.DrawNode.extend({
         x: origin.x + radius,
         y: origin.y + radius
       }
-      for (var i = segments / 4; i <= segments / 2; i++) {
-        var rads = i * coef,
+      for (let i = segments / 4; i <= segments / 2; i = i + 1) {
+        let rads = i * coef,
           j = radius * Math.cos(rads + CC.degreesToRadians(90)) + center.x,
           k = radius * Math.sin(rads + CC.degreesToRadians(90)) + center.y;
         vertices.push(CC.p(j, k));
@@ -97,16 +96,16 @@ let RoundRect = cc.DrawNode.extend({
   this.width = width;
   this.height = height;
   this.position = CC.p(position.x, position.y);
-  lineColor = lineColor || this.getDrawColor();
+  // lineColor = lineColor || this.getDrawColor();
 
-  [lineColor, (fillColor || {})].forEach(function (obj) {
-    obj.a === obj.a !== null ? obj.a : 255
-  })
+  // [lineColor, (fillColor || {})].forEach(function (obj) {
+  //   obj.a === obj.a !== null ? obj.a : 255
+  // })
 
   if (fillColor) {
     this.drawPoly(getVertices(CC.p(0, 0), CC.p(width, height), fillColor, lineWidth, lineColor, borderRadius, type,position), fillColor, lineWidth, lineColor || CC.color(255, 255, 255));
   } else {
-    var defaultColor = CC.color(128, 0, 0); 
+    let defaultColor = CC.color(128, 0, 0); 
     this.drawPoly(getVertices(CC.p(0, 0), CC.p(width, height), fillColor, lineWidth, lineColor, borderRadius, type, position), defaultColor, lineWidth, defaultColor);
   }
   }

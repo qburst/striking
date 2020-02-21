@@ -22,7 +22,7 @@
 import {CC, CP} from './globals';
 import Utils from './objects/Utils';
 import Resources from './resource';
-import { throws } from 'assert';
+// import { throws } from 'assert';
 import RoundRect from './RoundRect';
 import RectType from './RoundRect';
 
@@ -42,42 +42,41 @@ const PointsLayer = CC.Layer.extend({
   ctor: function () {
     this._super();
 
-    this.ColorL1 = this.utils.createColor(cc.color(0,54,1), 90, 350, 420, 700);
-    this.addChild(this.ColorL1,1);
+    let firstRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1, (CC.color(243, 250, 235)), 7,RectType.Top, {x:180, y:5000});
+    firstRoundRect.setPosition(CP.v(30, 330));
+    this.addChild(firstRoundRect, 5);
 
-    this.ColorL2 = this.utils.createColor(cc.color(0,54,1), 1180, 350, 355, 700);
-    this.addChild(this.ColorL2,5);
-
-    var firstRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1, (CC.color(243, 250, 235)), 7,RectType.Top,{x:180, y:5000});
-    firstRoundRect.setPosition(CP.v(30,330));
-    this.addChild(firstRoundRect,2);
+    let SmallRect1 = new RoundRect(230, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(165, 105, 80)), 6,RectType.Top,{x:180, y:5000});
+    SmallRect1.setPosition(CP.v(40, 475));
+    this.addChild(SmallRect1, 5);
 
     
+    let secondRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1.2, (CC.color(243, 250, 235)), 7,RectType.Top,{x:180, y:5000});
+    secondRoundRect.setPosition(CP.v(1030,330));
+    this.addChild(secondRoundRect,5);
+
+    let SmallRect2 = new RoundRect(230, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(101,101,101)), 6,RectType.Top,{x:180, y:5000});
+    SmallRect2.setPosition(CP.v(1040,475));
+    this.addChild(SmallRect2, 5);
+
+    this.ColorL1 = this.utils.createColor(CC.color(0,54,1), 90, 350, 420, 700);
+    this.addChild(this.ColorL1, 1);
+
+    this.ColorL2 = this.utils.createColor(CC.color(0,54,1), 1180, 350, 355, 700);
+    this.addChild(this.ColorL2, 1);
+
     this.firstCircle = new RoundRect(50, 50, (CC.color(48, 87, 46)), 1.2, (CC.color(48, 87, 46)), 24,RectType.Top,{x:180, y:5000});
     this.firstCircle.setScale(1.0);
     this.firstCircle.setOpacity(100);
-    this.addChild(this.firstCircle ,5); 
+    this.addChild(this.firstCircle, 5); 
 
-
-    var SmallRect1 = new RoundRect(230, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(165, 105, 80)), 6,RectType.Top,{x:180, y:5000});
-    SmallRect1.setPosition(CP.v(40,475));
-    this.addChild(SmallRect1,5);
-
-    this.Line1 = this.utils.createLine({x1:45,y1:380,x2:265,y2:380}, 0.8, CC.color(157, 96, 73));
+    this.Line1 = this.utils.createLine({x1:45, y1:380, x2:265, y2:380}, 0.8, CC.color(157, 96, 73));
     this.addChild(this.Line1, 5);
-
-    var secondRoundRect = new RoundRect(250, 200, (CC.color(243, 250, 235)), 1.2, (CC.color(243, 250, 235)), 7,RectType.Top,{x:180, y:5000});
-    secondRoundRect.setPosition(CP.v(1030,330));
-    this.addChild(secondRoundRect,5);
 
     this.secondCircle = new RoundRect(50,50, (CC.color(2, 183, 17)), 0, (CC.color(2, 183, 17)), 24,RectType.Top,{x:180, y:5000});
     this.secondCircle.setScale(1.0);
     this.secondCircle.setOpacity(100);
     this.addChild(this.secondCircle ,5); 
- 
-    var SmallRect2 = new RoundRect(230, 40, (CC.color(255, 247, 214)), 1.5, (CC.color(101,101,101)), 6,RectType.Top,{x:180, y:5000});
-    SmallRect2.setPosition(CP.v(1040,475));
-    this.addChild(SmallRect2,5);
 
     this.Line2 = this.utils.createLine({x1:1045,y1:380,x2:1265,y2:380}, 0.8, CC.color(53, 53, 53));
     this.addChild(this.Line2, 5);
@@ -243,7 +242,7 @@ const PointsLayer = CC.Layer.extend({
 
   setActivePlayer: function (name) {
     this.activePlayerName.setString("");
-    if (name  === 'Player 1'){
+    if (name === 'Player 1'){
       this.LineP1 = this.utils.createLine({x1:30,y1:550,x2:270,y2:550},1.5, CC.color(3,183,17));
       this.addChild(this.LineP1, 5);
       this.LineP2 = this.utils.createLine({x1:1030,y1:550,x2:1270,y2:550},1.5,CC.color(243,250,235));

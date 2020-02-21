@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
-<project name="Javascript compress project" basedir="/home/rajeesh/Documents/striking" default="compile">
+<project name="Javascript compress project" basedir="/home/varsha/Desktop/striking" default="compile">
 
     <taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
-             classpath="/home/rajeesh/Documents/cocos2d-x-root/cocos2d-x-3.17.2/tools/cocos2d-console/plugins/plugin_compile/build_web/bin/compiler-1.7.jar"/>
+             classpath="/home/varsha/Desktop/cocos2d-x-3.17.2 (1)/cocos2d-x-3.17.2/tools/cocos2d-console/plugins/plugin_compile/build_web/bin/compiler-1.6.jar"/>
 
     <target name="compile">
         <jscomp compilationLevel="simple" 
                 warning="quiet"
                 debug="false" 
-                output="/home/rajeesh/Documents/striking/publish/html5/game.min.js"
+                output="/home/varsha/Desktop/striking/publish/html5/game.min.js"
                 languagein="ECMASCRIPT5"
                 
                 >
-            <sources dir="/home/rajeesh/Documents/striking/frameworks/cocos2d-html5">
+            <sources dir="/home/varsha/Desktop/striking/frameworks/cocos2d-html5">
                 <file name="CCBoot.js"/>
                 <file name="cocos2d/core/event-manager/CCEventHelper.js"/>
                 <file name="CCDebugger.js"/>

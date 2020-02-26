@@ -37,7 +37,8 @@ const Resources = {
   circleSprite: 'res/circle_range.svg',
   dottedLine: 'res/line.svg',
   exitButton: 'res/exit.png',
-  circleon : 'res/circle.svg'
+  circleon : 'res/circle.svg',
+  OswaldRegular : 'res/fonts/OswaldRegular.ttf'
 };
 
 Resources.getResourceMeta = () => {

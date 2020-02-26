@@ -31,7 +31,7 @@ export default class Utils {
 
   // create labels
   createtextLabels(placeholder, fontname, fontsize, position) {
-    this.textLabels= new CC.LabelTTF(placeholder,"Oswald",fontsize,position);
+    this.textLabels= new CC.LabelTTF(placeholder,fontname,fontsize,position);
     this.textLabels.x = position ? position.x : '';
     this.textLabels.y = position ? position.y : '';
     this.textLabels.setColor(CC.color(0, 0, 0));

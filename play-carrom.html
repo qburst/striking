@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Carrom Board</title>
     <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
-    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
 
     <meta name="viewport"
         content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1,target-densitydpi=device-dpi"/>
@@ -64,10 +64,9 @@ body {
   background-color: #333;
 
   text-align: center;
-  font-family: Helvetica, Verdana, Arial, sans-serif;
-
   display: flex;
   flex-direction: column;
+  font-family: Oswald;
 }
 
 #Cocos2dGameContainer {
@@ -98,6 +97,12 @@ canvas {
     font-style: normal;
     font-weight: 400;
     src: local('makidoFont'), url(res/fonts/MikadoBold_DEMO.otf) format('opentype');
+}
+@font-face {
+  font-family: 'OswaldRegular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('OswaldRegular'), url(res/fonts/OswaldRegular.ttf) format('opentype');
 }
 </style>
 </head>
